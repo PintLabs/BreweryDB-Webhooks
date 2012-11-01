@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $apiKey = ''; // your BreweryDB API key
  
 // checks to make sure that the request was actually sent from the BreweryDB API
-$isValidRequest = sha1($apiKey . $_POST['nonce']) == $_POST['key'];
+$isValidRequest = sha1($apiKey . $_GET['nonce']) == $_GET['key'];
 
 if ($isValidRequest) {
 
